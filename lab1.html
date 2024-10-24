@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="file"] {
+            padding: 5px;
+        }
+        input[type="password"] {
+            font-family: 'Verdana', sans-serif;
+        }
+        .img-preview {
+            display: block;
+            margin-top: 10px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            object-fit: cover;
+        }
+        .form-group.inline {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group.inline input {
+            width: 48%;
+        }
+        .form-group.readonly input {
+            background-color: #f0f0f0;
+        }
+        .form-group .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .form-group button[disabled] {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Create Account</h2>
+    <form id="userForm">
+
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" maxlength="255" required>
+            <div class="error" id="usernameError"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="inline">
+                <input type="password" id="password" name="password" placeholder="Enter your password" maxlength="255" required>
+                <button type="button" onclick="togglePassword()">Show/Hide</button>
+            </div>
+            <div class="error" id="passwordError"></div>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" maxlength="255" required>
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <!-- Full Name (optional) -->
+        <div class="form-group">
+            <label for="fullName">Full Name (optional)</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+        </div>
+
+        <!-- Role Dropdown -->
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="">Select a role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <!-- Add more roles as needed -->
+            </select>
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="form-group">
+            <label for="profilePicture">Profile Picture</label>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*" onchange="previewImage(event)">
+            <img id="imgPreview" class="img-preview" src="" alt="Image Preview" />
+        </div>
+
+        <!-- Account Created At (Read-only) -->
+        <div class="form-group readonly">
+            <label for="createdAt">Account Created At</label>
+            <input type="text" id="createdAt" name="createdAt" readonly value="2024-09-28">
+        </div>
+
+        <!-- Last Updated At (Read-only) -->
+        <div class="form-group readonly">
+            <label for="updatedAt">Last Updated At</label>
+            <input type="text" id="updatedAt" name="updatedAt" readonly value="2024-09-28">
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="form-group">
+            <button type="submit" id="submitButton" disabled>Create Account</button>
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="cancelForm()">Cancel</button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // Password show/hide toggle
+    function togglePassword() {
+        const passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+
+    // Image preview function
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function(){
+            const img = document.getElementById("imgPreview");
+            img.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    // Form validation (example logic for demo purposes)
+    const form = document.getElementById('userForm');
+    const submitButton = document.getElementById('submitButton');
+
+    form.addEventListener('input', function() {
+        const isValid = form.checkValidity();
+        submitButton.disabled = !isValid;
+    });
+
+    // Cancel button logic
+    function cancelForm() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
