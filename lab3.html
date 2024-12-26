@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia Sẻ Tài Liệu Học Tập</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        .subject-list {
+            margin-bottom: 30px;
+        }
+
+        .subject-list h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subject-list ul {
+            list-style: none;
+        }
+
+        .subject-list ul li {
+            margin-bottom: 10px;
+        }
+
+        .subject-list ul li a {
+            color: #4CAF50;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .subject-list ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .documents-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .documents-section h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .documents-section h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .documents-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .documents-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .documents-section ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .documents-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Chia Sẻ Tài Liệu Học Tập</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Danh Sách Môn Học</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Môn học section -->
+        <section class="subject-list">
+            <h2>Chọn Môn Học</h2>
+            <ul>
+                <li><a href="#subject1">Môn học 1</a></li>
+                <li><a href="#subject2">Môn học 2</a></li>
+                <li><a href="#subject3">Môn học 3</a></li>
+            </ul>
+        </section>
+
+        <!-- Môn học 1 -->
+        <section id="subject1" class="documents-section">
+            <h3>Môn học 1: Cơ Sở Dữ Liệu</h3>
+            <div class="documents">
+                <h4>Bài Giảng</h4>
+                <ul>
+                    <li><a href="#">Bài giảng 1 - Cơ sở dữ liệu cơ bản</a></li>
+                    <li><a href="#">Bài giảng 2 - Mô hình quan hệ</a></li>
+                </ul>
+
+                <h4>Bài Tập</h4>
+                <ul>
+                    <li><a href="#">Bài tập 1 - Tạo bảng cơ sở dữ liệu</a></li>
+                    <li><a href="#">Bài tập 2 - Truy vấn SQL cơ bản</a></li>
+                </ul>
+
+                <h4>Tài Liệu Tham Khảo</h4>
+                <ul>
+                    <li><a href="#">Sách: Cơ sở dữ liệu - Tác giả A</a></li>
+                    <li><a href="#">Bài viết: Phân tích dữ liệu lớn</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Môn học 2 -->
+        <section id="subject2" class="documents-section">
+            <h3>Môn học 2: Lập Trình Web</h3>
+            <div class="documents">
+                <h4>Bài Giảng</h4>
+                <ul>
+                    <li><a href="#">Bài giảng 1 - HTML cơ bản</a></li>
+                    <li><a href="#">Bài giảng 2 - CSS và giao diện người dùng</a></li>
+                </ul>
+
+                <h4>Bài Tập</h4>
+                <ul>
+                    <li><a href="#">Bài tập 1 - Thiết kế trang web đơn giản</a></li>
+                    <li><a href="#">Bài tập 2 - Tạo form đăng ký</a></li>
+                </ul>
+
+                <h4>Tài Liệu Tham Khảo</h4>
+                <ul>
+                    <li><a href="#">Sách: HTML & CSS từ A đến Z</a></li>
+                    <li><a href="#">Bài viết: Phát triển ứng dụng web hiện đại</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Môn học 3 -->
+        <section id="subject3" class="documents-section">
+            <h3>Môn học 3: Toán Rời Rạc</h3>
+            <div class="documents">
+                <h4>Bài Giảng</h4>
+                <ul>
+                    <li><a href="#">Bài giảng 1 - Logic toán học</a></li>
+                    <li><a href="#">Bài giảng 2 - Các phép toán cơ bản</a></li>
+                </ul>
+
+                <h4>Bài Tập</h4>
+                <ul>
+                    <li><a href="#">Bài tập 1 - Chứng minh logic</a></li>
+                    <li><a href="#">Bài tập 2 - Tính toán xác suất</a></li>
+                </ul>
+
+                <h4>Tài Liệu Tham Khảo</h4>
+                <ul>
+                    <li><a href="#">Sách: Toán rời rạc cho sinh viên CNTT</a></li>
+                    <li><a href="#">Bài viết: Các ứng dụng của lý thuyết đồ thị</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Hệ Thống Chia Sẻ Tài Liệu. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+</body>
+</html>
